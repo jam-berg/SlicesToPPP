@@ -3,9 +3,13 @@ import collections.abc
 from pptx import Presentation
 from pptx.dml.color import RGBColor
 from pptx.util import Cm
+import os
+import glob
 
-base_path = '~/ETHZ/Semester 3/Projekt&Praktika III/C8 Radikalische Polymerisation/STL Examples/QuadraTresHelicesRndCrnr/'
+base_path = os.environ['HOME'] + '/ETHZ/Semester 3/Projekt&Praktika III/C8 Radikalische Polymerisation/STL Examples/QuadraTresHelicesRndCrnr/'
 img_path = 'QuadraTresHelicesRndCrnr00120.png'
+filelist = sorted(glob.glob(base_path + '/*.png'))
+print(filelist)
 
 prs = Presentation()
 slide_masters = prs.slide_masters
